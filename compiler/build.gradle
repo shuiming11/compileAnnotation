@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+    implementation project(path: ':annolib')  //第一步新增的用于存放注解的module
+    implementation 'com.google.auto.service:auto-service:1.0-rc2'
+    annotationProcessor'com.google.auto.service:auto-service:1.0-rc2'//注意需要加上这个,没有这个生成不了文件
+    implementation 'com.squareup:javapoet:1.10.0'
+}
